@@ -20,8 +20,8 @@ jobs:
     strategy:
       matrix:
         config:
-          - { name: "Ubuntu gcc", os: "ubuntu-latest", generator: "Unix Makefiles", cc: "gcc", cxx: "g++" }
-          - { name: "Ubuntu clang", os: "ubuntu-latest", generator: "Unix Makefiles", cc: "clang", cxx: "clang++" }
+          - { name: "Ubuntu gcc", os: "ubuntu-latest", generator: "Unix Makefiles", cc: "gcc", cxx: "g++", cmake_flags: "-DCMAKE_EXE_LINKER_FLAGS='-static'" }
+          - { name: "Ubuntu clang", os: "ubuntu-latest", generator: "Unix Makefiles", cc: "clang", cxx: "clang++", cmake_flags: "-DCMAKE_EXE_LINKER_FLAGS='-static'" }
           - { name: "macOS clang", os: "macos-latest", generator: "Unix Makefiles", cc: "clang", cxx: "clang++", cmake_flags: "-DCMAKE_OSX_ARCHITECTURES='x86_64;arm64'" }
           - { name: "Windows clang", os: "windows-latest", generator: "Unix Makefiles", cc: "clang", cxx: "clang++" }
           - { name: "Windows MSVC", os: "windows-2022", generator: "Visual Studio 17 2022"}
